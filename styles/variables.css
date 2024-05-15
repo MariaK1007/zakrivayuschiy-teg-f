@@ -1,1 +1,33 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* В этом файле будут храниться все значения 
+переменных в исходном состоянии, а так же 
+их изменения в зависимости от ширины устройства */
+
+:root {
+  --font-family-inter: "Inter-Variable", sans-serif;
+  --font-family-press: "Press Start 2P", sans-serif;
+    --main-font-weight: "wght" 400;
+    --title-font-weight: "wght" 700;
+  --color-black: rgba(0, 0, 0, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-red: rgba(255, 0, 0, 1);
+  --background-gradient: repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      transparent 2px
+    ),
+    repeating-linear-gradient(180deg, #d3d3d3, transparent 2px),
+    linear-gradient(180deg, rgba(231, 231, 231, 1) 0.01%, 
+    rgba(26, 26, 26, 1));    
+    --accent-color: var(--color-black);
+  --border-solid: var(--color-black);
+  --text-color: var(--color-black);
+  --back-color-page: var(--color-white);
+  --back-color-block: var(--color-white);
+  --back-color-button: var(--color-white);
+  --svg-color: var(--color-white);
+  --label-border: var(--color-white);
+  --click-heart: var(--color-red);
+  --back-gradient-page: var(--background-gradient);
+ }
+
+ 

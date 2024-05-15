@@ -1,20 +1,463 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+Будьте внимательны! Для корректной работы скриптов 
+на этом сайте нужно, 
+чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+✦ is-liked — для обозначения состояния лайкнутой иконки 
+в виде сердца
+✦ button__text — для обозначения текстового элемента 
+внутри кнопки
+Кроме этого, не меняйте HTML переключателя тем. 
+Его разметка также гарантирует работу своего скрипта.
 
 */
 
 .page {
+  font-family: var(--font-family-inter);
+  font-variation-settings: "wght" var(--main-font-weight);
+  background-color: var(--back-color-page);
+  background-image: var(--back-gradient-page);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  margin-block: 100px;
+  margin-inline: auto;
+  max-width: 700px;
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: 136px;
+  padding-block-end: 22px;
+  row-gap: 20px;
+  background-color: var(--back-color-block);
+  border: 2px solid var(--border-solid);
+}
+
+.header_title {
+  font-variation-settings: "wght" var(--title-font-weight);
+  font-family: var(--font-family-press);
+  color: var(--text-color);
+  font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+}
+
+.header_title-text {
+  font-family: var(--font-family-press);
+  color: var(--text-color);
+  font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  text-transform: uppercase;
+  align-self: center;
+}
+
+/* .theme-menu {
+}
+
+.header__theme-menu {
+ }
+
+.theme-menu__list {
+} */
+
+.theme-menu__item {
+  display: grid;
+  justify-content: start;
+  margin-inline-start: 20px;
+}
+
+.theme-menu__button {
+  outline: none;
+  font-family: var(--font-family-press);
+  font-size: 14px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  padding: 0;
+  margin-block: 6px;
+  border: none;
+  background-color: var(--back-color-block);
+  position: relative;
+}
+
+.theme-menu__button:after {
+  content: "";
+  display: block;
+  width: 100%;
+  transition: 0.5s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  border-bottom: 2px solid var(--text-color);
+  transform: scaleX(1);
+}
+
+.theme-menu__button:focus {
+  opacity: 60%;
+}
+
+.theme-menu__button:hover {
+  color: var(--text-color);
+  opacity: 60%;
+}
+
+.theme-menu__button::before {
+  content: "▶";
+  width: 18px;
+  position: absolute;
+  left: -20px;
+  color: transparent;
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 60%;
+}
+
+.theme-menu__button:disabled:before {
+  color: var(--text-color);
+  opacity: 60%;
+}
+
+.post {
+  display: grid;
+  max-width: 700px;
+  margin-block-end: 50px;
+  margin-inline: auto;
+  margin-inline: auto;
+  background-color: var(--back-color-block);
+  border: 2px solid var(--border-solid);
+}
+
+.post_title {
+  font-family: var(--font-family-inter);
+  font-variation-settings: var(--title-font-weight);
+  font-size: 18px;
+  background-color: var(--back-color-block);
+  color: var(--text-color);
+  line-height: 22px;
+  padding-block: 4px;
+  padding-inline: 10px;
+}
+
+.post_image {
+  position: relative;
+  margin: 0;
+  border-block: 2px solid var(--border-solid);
+}
+
+.label_text {
+  position: absolute;
+  font-family: var(--font-family-press);
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 50%;
+  mix-blend-mode: hard-light;
+  text-shadow: 0px 0px 1px var(--label-border), 0px 0px 1px var(--label-border);
+  top: 28px;
+  right: 28px;
+  z-index: 1;
+}
+
+@supports (-webkit-text-stroke: 1px var(--label-border)) {
+  .label_text {
+    -webkit-text-stroke: 1px var(--label-border);
+    text-shadow: none;
+  }
+}
+
+.post_text {
+  font-family: var(--font-family-inter);
+  font-size: 18px;
+  color: var(--text-color);
+  padding-inline: 26px;
+  padding-block-start: 21px;
+  padding-block-end: 6px;
+  line-height: 21px;
+}
+
+.post_like-icon {
+  display: flex;
+  justify-self: end;
+  margin-block: 23px;
+  margin-inline-end: 24px;
+  justify-content: end;
+  align-items: end;
+}
+
+.card__icon-button {
+  outline: none;
+  border: none;
+  height: 36px;
+  padding: 0;
+  margin-inline-end: 7px;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--border-solid);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.contour {
+  fill: var(--accent-color);
+}
+
+.core {
+  fill: transparent;
+}
+
+.main-body {
+  fill: transparent;
+}
+
+.sparks {
+  fill: var(--click-heart);
+  opacity: 0;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--click-heart);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--click-heart);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--click-heart);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--click-heart);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--click-heart);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.is-liked .heart {
+  animation: like-sparks 0.3s ease-in 0.1s;
+}
+
+.is-liked .sparks {
+  animation: like-sparks-end 0.3s ease-in 0.3s;
+}
+
+.card__like-button {
+  position: relative;
+  overflow: hidden;
+  width: 130px;
+  height: 38px;
+}
+
+.card__like-button::before,
+.footer_button::before,
+.button_dialog::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-color);
+  translate: 100%;
+}
+
+.card__like-button:hover::before,
+.footer_button:hover::before,
+.button_dialog:hover::before {
+  animation: move 0.5s ease-in-out forwards;
+}
+
+.card__like-button:focus,
+.footer_button:focus,
+.button_dialog:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--border-solid);
+  transition: 0.3s;
+}
+
+.button__text {
+  font-family: var(--font-family-press);
+  font-size: 14px;
+  color: var(--svg-color);
+  mix-blend-mode: difference;
+}
+
+.post_picture {
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-block-end: 103px;
+}
+
+.footer_button {
+  padding-inline: 22px;
+  padding-block: 5px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttom_footer-icon {
+  color: var(--svg-color);
+  mix-blend-mode: difference;
+  width: 21px;
+  height: auto;
+  margin-block-start: 9px;
+}
+
+.footer_dialog-icon {
+  color: var(--svg-color);
+  width: 39px;
+  height: 39px;
+  margin-block: -60px;
+  mix-blend-mode: difference;
+}
+
+button {
+  border: 2px solid var(--border-solid);
+  background-color: var(--back-color-button);
+  cursor: pointer;
+}
+
+.footer_dialog {
+  padding: 14px 30px 30px 30px;
+  background-color: var(--back-color-page);
+}
+
+.button_dialog {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-block: 12px;
+}
+
+.button__text-modal {
+  font-family: var(--font-family-press);
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 400;
+  padding-inline: 30px;
+  padding-block-end: 30px;
+  text-transform: uppercase;
+  line-height: 21px;
+  margin-inline-start: 35px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 75%;
+}
+
+.img-0 {
+  filter: invert(1);
+}
+
+.img-1 {
+  filter: hue-rotate(-82deg);
+}
+
+.img-2 {
+  filter: brightness(88%);
+}
+
+.img-3 {
+  filter: contrast(160%);
+}
+
+.img-4 {
+  filter: opacity(85%);
+}
+
+.img-5 {
+  filter: saturate(220%) invert(20%) contrast(71%);
+}
+
+.img-6 {
+  filter: hue-rotate(73deg) blur(2px);
+}
+
+.img-7 {
+  filter: saturate(25%);
+}
+
+@media (width <= 375px) {
+  .header {
+    margin-inline: 0;
+    padding-block-start: 120px;
+    padding-block-end: 20px;
+  }
+
+  .post {
+    margin-inline: 0;
+  }
+
+  .post_title {
+    padding-block: 5px;
+  }
+
+  .label_text {
+    right: 12px;
+  }
+
+  .post_text {
+    padding-block-start: 20px;
+    padding-inline: 26px;
+  }
+
+  .footer_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 2px;
+  }
+
+  .button__text-modal {
+    padding-inline-start: 19px;
+    padding-inline-end: 0;
+    margin-inline-start: 40px;
+  }
+
+  .buttom_footer-icon {
+    width: 28px;
+    height: auto;
+    margin-block-start: 0;
+    margin-block-end: 8px;
+    padding-block-start: 8px;
+  }
+
+  .footer_dialog-icon {
+    margin-block: -55px;
+  }
+
+  /* ::-webkit-scrollbar {
+    width: 0;
+  } */
 }
