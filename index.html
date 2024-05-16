@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <title>Закрывающий тег</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -21,8 +22,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header_title">&lt;/HTML&gt;</h1>
-      <h2 class="header_title-text">закрывающий тег</h2>
+      <h2 class="header_title">&lt;/HTML&gt;</h2>
+      <h1 class="header_title-text">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -59,7 +60,7 @@
             &lt;/HTML&gt;
           </figcaption>
           <img
-            class="post_picture img-0"
+            class="post_picture filter-invert"
             src="./images/img-0.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -70,7 +71,9 @@
           основами и настроиться на учёбу. И, возможно, подумать, как новые
           знания могут повлиять на ваше будущее.
         </p>
-        <p class="post_text">Таак, начнём обучение, вроде не так это сложно?!</p>
+        <p class="post_text">
+          Таак, начнём обучение, вроде не так это сложно?!
+        </p>
         <div class="post_like-icon">
           <button class="card__icon-button">
             <svg
@@ -134,7 +137,7 @@
             &lt;/HTML&gt;
           </figcaption>
           <img
-            class="post_picture img-1"
+            class="post_picture filter-hue"
             src="./images/img-1.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -213,7 +216,7 @@
             &lt;css&gt;
           </figcaption>
           <img
-            class="post_picture img-2"
+            class="post_picture filter-bright"
             src="./images/img-2.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -290,7 +293,7 @@
             &lt;desigions&gt;
           </figcaption>
           <img
-            class="post_picture img-3"
+            class="post_picture filter-contrast"
             src="./images/img-3.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -367,7 +370,7 @@
         <figure class="post_image">
           <figcaption class="label_text" aria-hidden="true">care</figcaption>
           <img
-            class="post_picture img-4"
+            class="post_picture filter-opacity"
             src="./images/img-4.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -446,7 +449,7 @@
             &lt;support&gt;
           </figcaption>
           <img
-            class="post_picture img-5"
+            class="post_picture filter-invert"
             src="./images/img-5.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -523,7 +526,7 @@
             &lt;lifes-style: none;&gt;
           </figcaption>
           <img
-            class="post_picture img-6"
+            class="post_picture filter-blur"
             src="./images/img-6.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -601,7 +604,7 @@
             &lt;experience&gt;
           </figcaption>
           <img
-            class="post_picture img-7"
+            class="post_picture filter-satur"
             src="./images/img-7.jpg"
             alt="авто подготовка к работе"
             loading="lazy"
@@ -616,7 +619,8 @@
           есть результат.
         </p>
         <p class="post_text">
-          Отличное начало, продолжаем дальше. Впереди много интересного и познавательного.
+          Отличное начало, продолжаем дальше. Впереди много интересного и
+          познавательного.
         </p>
         <div class="post_like-icon">
           <button class="card__icon-button">
@@ -674,51 +678,51 @@
           </button>
         </div>
       </article>
-    </main>
-    <footer class="footer">
-      <button
-        class="footer_button"
-        type="button"
-        onclick="window['dialog-id'].showModal();"
-        aria-controls="dialog-id"
-      >
-        <svg
-          class="buttom_footer-icon"
-          width="40"
-          height="40"
-          viewbox="0 0 39 39"
-          xmlns="http://www.w3.org/2000/svg"
+      <div class="footer">
+        <button
+          class="footer_button"
+          type="button"
+          onclick="window['dialog-id'].showModal();"
+          aria-controls="dialog-id"
         >
-          <use href="./svg/floppy.svg#floppy"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-      <dialog class="footer_dialog" id="dialog-id">
-        <svg
-          class="footer_dialog-icon"
-          width="39"
-          height="39"
-          viewbox="0 0 39 39"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <use href="./svg/floppy.svg#floppy"></use>
-        </svg>
-        <p class="button__text-modal">
-          Вставьте <br />
-          дискету, чтобы <br />
-          продолжить
-        </p>
-        <form>
-          <button
-            class="button_dialog"
-            type="button"
-            onclick="window['dialog-id'].close();"
+          <svg
+            class="buttom_footer-icon"
+            width="40"
+            height="40"
+            viewbox="0 0 39 39"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span class="button__text">ОК</span>
-          </button>
-        </form>
-      </dialog>
-    </footer>
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+        <dialog class="footer_dialog" id="dialog-id">
+          <svg
+            class="footer_dialog-icon"
+            width="39"
+            height="39"
+            viewbox="0 0 39 39"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <p class="button__text-modal">
+            Вставьте <br />
+            дискету, чтобы <br />
+            продолжить
+          </p>
+          <form method="dialog">
+            <button
+              class="button_dialog"
+              type="button"
+              onclick="window['dialog-id'].close();"
+            >
+              <span class="button__text">ОК</span>
+            </button>
+          </form>
+        </dialog>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

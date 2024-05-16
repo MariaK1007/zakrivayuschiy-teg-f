@@ -43,7 +43,6 @@
 }
 
 .header_title {
-  font-variation-settings: "wght" var(--title-font-weight);
   font-family: var(--font-family-press);
   color: var(--text-color);
   font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
@@ -96,7 +95,7 @@
 
 .theme-menu__button:focus-visible::after {
   width: 100%;
-  border-bottom: 2px solid var(--text-color);
+  outline: 1px solid var(--text-color);
   transform: scaleX(1);
 }
 
@@ -115,7 +114,7 @@
   position: absolute;
   left: -20px;
   color: transparent;
-  animation: pulse 0.5s ease-in-out infinite;
+  animation: pulse 1s ease-in-out infinite;
 }
 
 .theme-menu__button:disabled {
@@ -206,23 +205,6 @@
   outline: 2px solid var(--border-solid);
   border: none;
   transition: 0.3s ease;
-}
-
-.contour {
-  fill: var(--accent-color);
-}
-
-.core {
-  fill: transparent;
-}
-
-.main-body {
-  fill: transparent;
-}
-
-.sparks {
-  fill: var(--click-heart);
-  opacity: 0;
 }
 
 .like-icon:hover .core {
@@ -350,6 +332,7 @@ button {
 .footer_dialog {
   padding: 14px 30px 30px 30px;
   background-color: var(--back-color-page);
+  border: 2px solid var(--border-solid);
 }
 
 .button_dialog {
@@ -376,35 +359,35 @@ dialog::backdrop {
   opacity: 75%;
 }
 
-.img-0 {
+.filter-invert {
   filter: invert(1);
 }
 
-.img-1 {
+.filter-hue {
   filter: hue-rotate(-82deg);
 }
 
-.img-2 {
+.filter-bright {
   filter: brightness(88%);
 }
 
-.img-3 {
+.filter-contrast {
   filter: contrast(160%);
 }
 
-.img-4 {
+.filter-opacity {
   filter: opacity(85%);
 }
 
-.img-5 {
+.filter-invert {
   filter: saturate(220%) invert(20%) contrast(71%);
 }
 
-.img-6 {
+.filter-blur {
   filter: hue-rotate(73deg) blur(2px);
 }
 
-.img-7 {
+.filter-satur {
   filter: saturate(25%);
 }
 

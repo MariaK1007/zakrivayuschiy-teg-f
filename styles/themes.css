@@ -8,14 +8,14 @@
 */
 :root.theme-dark {
   --font-family-inter: "Inter-Variable", sans-serif;
-  --font-family-press: "Press Start 2P", sans-serif;
+  --font-family-press: "Press Start 2P", fantasy;
   --main-font-weight: "wght" 465;
   --title-font-weight: "wght" 785;
   --color-black: rgba(0, 0, 0, 1);
   --color-green: rgba(0, 204, 20, 1);
   --color-red: rgba(255, 0, 0, 1);
-  --background-gradient: repeating-linear-gradient(90deg, #000, transparent 2px),
-    repeating-linear-gradient(180deg, #007f0c, #004306 2px);
+  --background-gradient: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #007f0c 0 2px, #004306 2px 4px);
   --accent-color: var(--color-green);
   --border-solid: var(--color-green);
   --text-color: var(--color-green);
@@ -30,7 +30,7 @@
 
 :root.theme-light {
   --font-family-inter: "Inter-Variable", sans-serif;
-  --font-family-press: "Press Start 2P", sans-serif;
+  --font-family-press: "Press Start 2P", fantasy;
   --color-black: rgba(0, 0, 0, 1);
   --color-white: rgba(255, 255, 255, 1);
   --color-red: rgba(255, 0, 0, 1);
@@ -39,10 +39,10 @@
   --title-font-weight: "wght" 700;
   --background-gradient: repeating-linear-gradient(
       90deg,
-      #d3d3d3,
-      transparent 2px
+      #d3d3d3 0 2px,
+      transparent 2px 4px
     ),
-    repeating-linear-gradient(180deg, #d3d3d3, transparent 2px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
   --accent-color: var(--color-black);
   --border-solid: var(--color-black);
@@ -59,7 +59,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --font-family-inter: "Inter-Variable", sans-serif;
-  --font-family-press: "Press Start 2P", sans-serif;
+  --font-family-press: "Press Start 2P", fantasy;
   --main-font-weight: "wght" 465;
   --title-font-weight: "wght" 785;
   --color-black: rgba(0, 0, 0, 1);

@@ -40,6 +40,23 @@
   }
 }
 
+.contour {
+  fill: var(--accent-color);
+}
+
+.core {
+  fill: transparent;
+}
+
+.main-body {
+  fill: transparent;
+}
+
+.sparks {
+  fill: var(--click-heart);
+  opacity: 0;
+}
+
 @keyframes like-sparks {
   0% {
     transform: scale(1);

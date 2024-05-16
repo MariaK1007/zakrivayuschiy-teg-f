@@ -4,7 +4,7 @@
 
 :root {
   --font-family-inter: "Inter-Variable", sans-serif;
-  --font-family-press: "Press Start 2P", sans-serif;
+  --font-family-press: "Press Start 2P", fantasy;
     --main-font-weight: "wght" 400;
     --title-font-weight: "wght" 700;
   --color-black: rgba(0, 0, 0, 1);
